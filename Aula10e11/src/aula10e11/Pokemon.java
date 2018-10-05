@@ -33,8 +33,6 @@ public abstract class Pokemon {
     
  
  
- 
- 
     public String getNome() {
         return nome;
     }
