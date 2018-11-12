@@ -5,6 +5,8 @@
  */
 package pokemons;
 
+import java.util.Objects;
+
 /**
  *
  * @author pedro
@@ -148,7 +150,39 @@ public class Pokemon extends Pokedex{
     public int getNumIdEvolucao(){
         return this.numIdEvolucao;
     }
+     @Override
+    public String toString() {
+        return "Pokemon{" + "nomePokemon=" + nomePokemon + '}';
+    }
 
+        
+    public int compareTo(Pokemon o) {
+        return this.nomePokemon.compareTo(o.getNomePokemon());
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pokemon other = (Pokemon) obj;
+        if (!Objects.equals(this.nomePokemon, other.nomePokemon)) {
+            return false;
+        }
+        return Objects.equals(this.sexoPokemon, other.sexoPokemon);
+    }
     
     /**
      * exclui pokemon

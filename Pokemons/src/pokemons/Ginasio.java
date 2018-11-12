@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pokemons;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,12 +7,12 @@ import java.util.Arrays;
  *
  * @author Juarez
  */
-//estender de informações//sobrecrga de construtorres
+//estender de informações//sobrecarga de construtorres
 public class Ginasio extends Pokedex {
 
 //private static ArrayList <Ginasio> arrayGinasio = new ArrayList();
 private String nomeGinasio, mestreGinasio;
-private ArrayList <Pokemon> arrayPokemons = new ArrayList();
+private ArrayList <Informacoes> arrayPokemons = new ArrayList();
 
     
     //public static int contador =0;
@@ -65,7 +60,7 @@ private ArrayList <Pokemon> arrayPokemons = new ArrayList();
         this.nomeGinasio = nomeGinasio;
     }
 
-    public void setPokemons(Pokemon pokemons) {
+    public void setPokemons(Informacoes pokemons) {
         arrayPokemons.add(pokemons);
     }
     
