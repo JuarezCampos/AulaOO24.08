@@ -30,7 +30,7 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -49,15 +49,18 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SystemPokémon");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jDesktopPane1.setBackground(new java.awt.Color(153, 255, 153));
+        jDesktopPane1.setForeground(new java.awt.Color(204, 255, 204));
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 261, Short.MAX_VALUE)
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 681, Short.MAX_VALUE)
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/box.png"))); // NOI18N
@@ -65,6 +68,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/door_open.png"))); // NOI18N
         jMenuItem1.setText("Abrir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/disk.png"))); // NOI18N
@@ -75,9 +83,19 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/PokébolaC.png"))); // NOI18N
         jMenu2.setText("Pokémon");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/user_add.png"))); // NOI18N
         jMenuItem3.setText("Cadastrar");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/user_edit.png"))); // NOI18N
@@ -91,6 +109,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/user_delete.png"))); // NOI18N
         jMenuItem5.setText("Deletar");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuBar1.add(jMenu2);
@@ -100,6 +123,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/medal_gold_add.png"))); // NOI18N
         jMenuItem6.setText("Cadastrar");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/pencil.png"))); // NOI18N
@@ -113,6 +141,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/medal_gold_delete.png"))); // NOI18N
         jMenuItem8.setText("Deletar");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem8);
 
         jMenuBar1.add(jMenu3);
@@ -141,14 +174,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jDesktopPane1)
         );
 
         pack();
@@ -157,6 +187,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+       TelaConsultaPoke telaConsPoke = new TelaConsultaPoke();
+       jDesktopPane1.add(telaConsPoke);
+       telaConsPoke.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
@@ -166,12 +199,56 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
+        TelaConsultaGinasio telaConsGin = new TelaConsultaGinasio();
+       jDesktopPane1.add(telaConsGin);
+       telaConsGin.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+      
+       TelaCadastroPokemon telaCadPoke = new TelaCadastroPokemon();
+       jDesktopPane1.add(telaCadPoke);
+       telaCadPoke.setVisible(true);
+       
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+       TelaCadastroGinasio telaCadGin = new TelaCadastroGinasio();
+       jDesktopPane1.add(telaCadGin);
+       telaCadGin.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        TelaDeletaPoke telaDelPoke = new TelaDeletaPoke();
+        jDesktopPane1.add(telaDelPoke);
+        telaDelPoke.setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        TelaDeletaGinasio telaDelGin = new TelaDeletaGinasio();
+        jDesktopPane1.add(telaDelGin);
+        telaDelGin.setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        /// DESENVOLVER ROTINA DE ABRIR E FECHAR ARQUIVOS
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,6 +286,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -223,7 +301,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
   
