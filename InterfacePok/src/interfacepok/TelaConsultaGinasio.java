@@ -29,9 +29,9 @@ public class TelaConsultaGinasio extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jTextConsulGin = new javax.swing.JTextField();
+        jButConsultaGin = new javax.swing.JButton();
+        jButCancelConsGin = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Consulta Ginásio");
@@ -39,12 +39,12 @@ public class TelaConsultaGinasio extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Digite o Id:");
 
-        jButton3.setText("Consultar");
+        jButConsultaGin.setText("Consultar");
 
-        jButton4.setText("Cancelar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButCancelConsGin.setText("Cancelar");
+        jButCancelConsGin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButCancelConsGinActionPerformed(evt);
             }
         });
 
@@ -58,10 +58,10 @@ public class TelaConsultaGinasio extends javax.swing.JInternalFrame {
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(jButConsultaGin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(jButton4))
-                    .addComponent(jTextField2))
+                        .addComponent(jButCancelConsGin))
+                    .addComponent(jTextConsulGin))
                 .addGap(69, 69, 69))
         );
         jPanel1Layout.setVerticalGroup(
@@ -70,11 +70,11 @@ public class TelaConsultaGinasio extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextConsulGin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButConsultaGin)
+                    .addComponent(jButCancelConsGin))
                 .addContainerGap(176, Short.MAX_VALUE))
         );
 
@@ -92,17 +92,17 @@ public class TelaConsultaGinasio extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButCancelConsGinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButCancelConsGinActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButCancelConsGinActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButCancelConsGin;
+    private javax.swing.JButton jButConsultaGin;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextConsulGin;
     // End of variables declaration//GEN-END:variables
 }

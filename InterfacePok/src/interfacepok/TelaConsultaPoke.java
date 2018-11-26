@@ -29,9 +29,9 @@ public class TelaConsultaPoke extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jTextConsultaPoke = new javax.swing.JTextField();
+        jButConsulPoke = new javax.swing.JButton();
+        jButCancelConsPoke = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Consulta Pokémons");
@@ -39,12 +39,12 @@ public class TelaConsultaPoke extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Digite o Id:");
 
-        jButton3.setText("Consultar");
+        jButConsulPoke.setText("Consultar");
 
-        jButton4.setText("Cancelar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButCancelConsPoke.setText("Cancelar");
+        jButCancelConsPoke.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButCancelConsPokeActionPerformed(evt);
             }
         });
 
@@ -58,10 +58,10 @@ public class TelaConsultaPoke extends javax.swing.JInternalFrame {
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(jButConsulPoke)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(jButton4))
-                    .addComponent(jTextField2))
+                        .addComponent(jButCancelConsPoke))
+                    .addComponent(jTextConsultaPoke))
                 .addGap(69, 69, 69))
         );
         jPanel1Layout.setVerticalGroup(
@@ -70,11 +70,11 @@ public class TelaConsultaPoke extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextConsultaPoke, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButConsulPoke)
+                    .addComponent(jButCancelConsPoke))
                 .addContainerGap(176, Short.MAX_VALUE))
         );
 
@@ -92,17 +92,17 @@ public class TelaConsultaPoke extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButCancelConsPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButCancelConsPokeActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButCancelConsPokeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButCancelConsPoke;
+    private javax.swing.JButton jButConsulPoke;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextConsultaPoke;
     // End of variables declaration//GEN-END:variables
 }
