@@ -7,20 +7,31 @@ package interfacepok;
 
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import pokemons.Agua;
+import pokemons.Pokedex;
 
 /**
  *
  * @author Juarez
  */
 public class Menu extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Menu
      */
+    
+    
     public Menu() {
         initComponents();
+        
     }
-
+    
+    public static Pokedex Poke(){
+        //instancia 1 pokedex que será acessada por todos as Telas
+       Pokedex poke = new Pokedex();
+       return poke;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -152,6 +163,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/information.png"))); // NOI18N
         jMenu4.setText("Sobre");
+        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu4ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/door_out.png"))); // NOI18N
@@ -186,7 +202,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+        //Instancia da tela de consulta poke
        TelaConsultaPoke telaConsPoke = new TelaConsultaPoke();
        jDesktopPane1.add(telaConsPoke);
        telaConsPoke.setVisible(true);
@@ -199,23 +215,55 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-        TelaConsultaGinasio telaConsGin = new TelaConsultaGinasio();
+        //Instancia da tela de consulta ginasio
+       TelaConsultaGinasio telaConsGin = new TelaConsultaGinasio();
        jDesktopPane1.add(telaConsGin);
        telaConsGin.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
         // TODO add your handling code here:
+        //Saida do sistema
         System.exit(0);
     }//GEN-LAST:event_jMenu5MouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-      
+        //Instancia da tela de cadastro poke
        TelaCadastroPokemon telaCadPoke = new TelaCadastroPokemon();
        jDesktopPane1.add(telaCadPoke);
        telaCadPoke.setVisible(true);
-       
+     /*               String str;
+                    int val;
+                    
+                            Agua ag = new Agua();
+                            //setando o tipo
+                            ag.setTipo();
+                            str = telaCadPoke.jTextNomePoke.getText();
+                            ag.setNome(str);
+                            str = telaCadPoke.jTextSexoPoke.getText();
+                            ag.setSexo(str);
+                            str = telaCadPoke.jTextHabilPoke.getText();
+                            ag.setHabilidade(str);
+                            str = telaCadPoke.jBoxFraqPoke.toString();
+                            ag.setFraqueza(str);
+                            str = telaCadPoke.jBoxVantaPoke.toString();
+                            ag.setVantagem(str);
+                            str = telaCadPoke.jTextDescPoke.toString();
+                            ag.setDescricao(str);
+                            val = Integer.parseInt(telaCadPoke.jTextAlturaPoke.getText());
+                            ag.setAltura(val);
+                            val = Integer.parseInt(telaCadPoke.jTextPesoPoke.getText());
+                            ag.setPeso(val);
+                            val = Integer.parseInt(telaCadPoke.jTextEvolucao.getText());
+                            ag.setEvolucao(val);
+                            pokedex.setObjetoPokemon(ag);
+                            
+                            if(pokedex.getNumPokemon() == 1){
+                                JOptionPane.showMessageDialog(null,"Deu");
+                            }
+    */                        
+      
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
@@ -224,6 +272,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
+        //Instancia da tela de cadastro ginasio
        TelaCadastroGinasio telaCadGin = new TelaCadastroGinasio();
        jDesktopPane1.add(telaCadGin);
        telaCadGin.setVisible(true);
@@ -231,6 +280,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        //Instancia da tela de deleta poke
         TelaDeletaPoke telaDelPoke = new TelaDeletaPoke();
         jDesktopPane1.add(telaDelPoke);
         telaDelPoke.setVisible(true);
@@ -238,6 +288,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
+        //Instancia da tela de deleta ginasio
         TelaDeletaGinasio telaDelGin = new TelaDeletaGinasio();
         jDesktopPane1.add(telaDelGin);
         telaDelGin.setVisible(true);
@@ -249,6 +300,11 @@ public class Menu extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        // TODO add your handling code here:
+        //Informações sobre os Desenvolvedores
+    }//GEN-LAST:event_jMenu4ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,17 +5,40 @@
  */
 package interfacepok;
 
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import pokemons.Fogo;
+import pokemons.Agua;
+import pokemons.Pokedex;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juarez
  */
 public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
 
+     public void salvarObjeto(Pokedex obj){
+        try{
+            FileOutputStream arquivoGrav = new FileOutputStream("gravObj.dat");
+            ObjectOutputStream objGravar = new ObjectOutputStream(arquivoGrav);
+            objGravar.writeObject(obj);
+            objGravar.flush();
+            objGravar.close();
+            System.out.println("Arquivo salvo");
+            System.out.println("Objeto gravado com sucesso!");
+        }catch(Exception e) {
+            System.out.println("Erro ao salvar arquivo");
+        }
+    }
+    
     /**
      * Creates new form TelaCadastro
      */
     public TelaCadastroPokemon() {
         initComponents();
+ 
     }
 
     /**
@@ -78,13 +101,18 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
 
         jLabel10.setText("Vantagem:");
 
-        jBoxTipoPoke.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Água", "Fogo", "Normal", "Terra", "Voador" }));
+        jBoxTipoPoke.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Agua", "Fogo", "Normal", "Terra", "Voador" }));
 
-        jBoxFraqPoke.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Água", "Fogo", "Normal", "Terra", "Voador" }));
+        jBoxFraqPoke.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Agua", "Fogo", "Normal", "Terra", "Voador" }));
 
-        jBoxVantaPoke.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Água", "Fogo", "Normal", "Terra", "Voador" }));
+        jBoxVantaPoke.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Agua", "Fogo", "Normal", "Terra", "Voador" }));
 
         jButSalvarPoke.setText("Salvar");
+        jButSalvarPoke.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButSalvarPokeActionPerformed(evt);
+            }
+        });
 
         jButCancelPoke.setText("Cancelar");
         jButCancelPoke.addActionListener(new java.awt.event.ActionListener() {
@@ -206,13 +234,49 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_jButCancelPokeActionPerformed
 
+    private void jButSalvarPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButSalvarPokeActionPerformed
+            //caso esse objeto for do tipo fogo pega as informações de cada campo e salva esse objeto
+        if("Fogo".equals(jBoxTipoPoke.toString())){
+                        Fogo fg = new Fogo();
+                            //Setando o pokemon
+                            fg.setNome(jTextNomePoke.getText());
+                            fg.setSexo(jTextSexoPoke.getText());
+                            fg.setHabilidade(jTextHabilPoke.getText());
+                            fg.setFraqueza(jBoxFraqPoke.toString());
+                            fg.setVantagem(jBoxVantaPoke.toString());
+                            fg.setDescricao(jTextDescPoke.getText());
+                            fg.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));
+                            fg.setPeso(Integer.parseInt(jTextPesoPoke.getText()));
+                            fg.setEvolucao(Integer.parseInt(jTextEvolucao.getText()));
+                            //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
+                            Menu.Poke().setObjetoPokemon(fg);
+                                                     
+                        }
+      salvarObjeto( Menu.Poke()); //salva o objeto
+      //confere se tem algo na nossa pokedex e então limpa os campos
+      if( Menu.Poke() != null){
+      jTextAlturaPoke.setText("");
+      jTextDescPoke.setText("");
+      jTextEvolucao.setText("");
+      jTextHabilPoke.setText("");
+      jTextNomePoke.setText("");
+      jTextPesoPoke.setText("");
+      jTextSexoPoke.setText("");
+      jBoxFraqPoke.setSelectedIndex(0);
+      jBoxTipoPoke.setSelectedIndex(0);
+      jBoxVantaPoke.setSelectedIndex(0);
+      }
+      
+      
+    }//GEN-LAST:event_jButSalvarPokeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jBoxFraqPoke;
-    private javax.swing.JComboBox<String> jBoxTipoPoke;
-    private javax.swing.JComboBox<String> jBoxVantaPoke;
-    private javax.swing.JButton jButCancelPoke;
-    private javax.swing.JButton jButSalvarPoke;
+    public javax.swing.JComboBox<String> jBoxFraqPoke;
+    public javax.swing.JComboBox<String> jBoxTipoPoke;
+    public javax.swing.JComboBox<String> jBoxVantaPoke;
+    public javax.swing.JButton jButCancelPoke;
+    public javax.swing.JButton jButSalvarPoke;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -224,12 +288,12 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextAlturaPoke;
-    private javax.swing.JTextField jTextDescPoke;
-    private javax.swing.JTextField jTextEvolucao;
-    private javax.swing.JTextField jTextHabilPoke;
-    private javax.swing.JTextField jTextNomePoke;
-    private javax.swing.JTextField jTextPesoPoke;
-    private javax.swing.JTextField jTextSexoPoke;
+    public javax.swing.JTextField jTextAlturaPoke;
+    public javax.swing.JTextField jTextDescPoke;
+    public javax.swing.JTextField jTextEvolucao;
+    public javax.swing.JTextField jTextHabilPoke;
+    public javax.swing.JTextField jTextNomePoke;
+    public javax.swing.JTextField jTextPesoPoke;
+    public javax.swing.JTextField jTextSexoPoke;
     // End of variables declaration//GEN-END:variables
 }

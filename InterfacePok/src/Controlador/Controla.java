@@ -5,23 +5,35 @@
  */
 package Controlador;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+import pokemons.Agua;
+import pokemons.Fogo;
+import pokemons.Terra;
+import pokemons.Voador;
+import pokemons.Normal;
+import pokemons.Pokedex;
+
 /**
  *
  * @author Juarez
  */
-/*
+
 public class Controla {
-     public void salvarPokes(String jTextAlturaPoke, String jTextEvolucao, String jTextDescPoke, String jTextHabilPoke, String jTextNomePoke, String jTextPesoPoke, String jTextSexoPoke, String jBoxFraqPoke, String jBoxTipoPoke, String jBoxVantaPoke){
+/*   
+    Pokedex Poke = new Pokedex();
+   public void salvarPokes(String jTextAlturaPoke, String jTextEvolucao, String jTextDescPoke, String jTextHabilPoke, String jTextNomePoke, String jTextPesoPoke, String jTextSexoPoke, String jBoxFraqPoke, String jBoxTipoPoke, String jBoxVantaPoke){
                         
                        if("Fogo".equals(jBoxTipoPoke)){
                         Fogo fg = new Fogo();
                             //Setando o nome do pokemon
-                            fg.setNome(jTextNomePoke);
-                            fg.setSexo(jTextSexoPoke);
-                            fg.setHabilidade(jTextHabilPoke);
-                            fg.setFraqueza(jBoxFraqPoke);
-                            fg.setVantagem(jBoxVantaPoke);
-                            fg.setDescricao(jTextDescPoke);
+                            fg.setNome(jTextNomePoke.toString());
+                            fg.setSexo(jTextSexoPoke.toString());
+                            fg.setHabilidade(jTextHabilPoke.toString());
+                            fg.setFraqueza(jBoxFraqPoke.toString());
+                            fg.setVantagem(jBoxVantaPoke.toString());
+                            fg.setDescricao(jTextDescPoke.toString());
                             fg.setAltura(jTextAlturaPoke);
                             fg.setPeso(jTextPesoPoke);
                             fg.setEvolucao(jTextEvolucao);                            
@@ -84,7 +96,7 @@ public class Controla {
                            // pokedex.setObjetoPokemon(vd);
                            }
         }
-     
+   
      public void salvarGin(String jTextNomeGin, String jTextMestreGin, Boolean jBoxCadPoke, Integer jTextIdPoke){
      			 int auxInt;
                         if(jBoxCadPoke.equals(true)){
@@ -116,8 +128,8 @@ public class Controla {
                                 }
                             }
                         }
-     
+     }
+*/
+
 
 }
-
-*/

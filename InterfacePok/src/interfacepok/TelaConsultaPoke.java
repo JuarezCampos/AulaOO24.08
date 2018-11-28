@@ -40,6 +40,11 @@ public class TelaConsultaPoke extends javax.swing.JInternalFrame {
         jLabel2.setText("Digite o Id:");
 
         jButConsulPoke.setText("Consultar");
+        jButConsulPoke.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButConsulPokeActionPerformed(evt);
+            }
+        });
 
         jButCancelConsPoke.setText("Cancelar");
         jButCancelConsPoke.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +101,11 @@ public class TelaConsultaPoke extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButCancelConsPokeActionPerformed
+
+    private void jButConsulPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButConsulPokeActionPerformed
+        // TODO add your handling code here:
+             
+    }//GEN-LAST:event_jButConsulPokeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
