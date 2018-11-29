@@ -40,6 +40,11 @@ public class TelaDeletaGinasio extends javax.swing.JInternalFrame {
         jLabel2.setText("Digite o Id:");
 
         jButDeletaGin.setText("Deletar");
+        jButDeletaGin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButDeletaGinActionPerformed(evt);
+            }
+        });
 
         jButCancelGin.setText("Cancelar");
         jButCancelGin.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +101,12 @@ public class TelaDeletaGinasio extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButCancelGinActionPerformed
+
+    private void jButDeletaGinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButDeletaGinActionPerformed
+        // TODO add your handling code here:
+        Menu.Poke().excluiGinasio(Integer.parseInt(jTextDeletaGin.getText()));
+        jTextDeletaGin.setText("");
+    }//GEN-LAST:event_jButDeletaGinActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

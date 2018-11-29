@@ -41,6 +41,11 @@ public class TelaConsultaGinasio extends javax.swing.JInternalFrame {
         jLabel2.setText("Lista de Ginasios disponíveis:");
 
         jButConsultaGin.setText("Consultar");
+        jButConsultaGin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButConsultaGinActionPerformed(evt);
+            }
+        });
 
         jButCancelConsGin.setText("Cancelar");
         jButCancelConsGin.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +107,11 @@ public class TelaConsultaGinasio extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButCancelConsGinActionPerformed
+
+    private void jButConsultaGinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButConsultaGinActionPerformed
+        // TODO add your handling code here:
+        jtaTexto.setText(Menu.Poke().getObjetoGinasioLista());
+    }//GEN-LAST:event_jButConsultaGinActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

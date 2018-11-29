@@ -40,6 +40,11 @@ public class TelaDeletaPoke extends javax.swing.JInternalFrame {
         jLabel2.setText("Digite o Id:");
 
         jButDeletaPoke.setText("Deletar");
+        jButDeletaPoke.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButDeletaPokeActionPerformed(evt);
+            }
+        });
 
         jButCancelPoke.setText("Cancelar");
         jButCancelPoke.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +101,12 @@ public class TelaDeletaPoke extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButCancelPokeActionPerformed
+
+    private void jButDeletaPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButDeletaPokeActionPerformed
+        // TODO add your handling code here:
+        Menu.Poke().excluiPokemon(Integer.parseInt(jTextDelePoke.getText()));
+        jTextDelePoke.setText("");
+    }//GEN-LAST:event_jButDeletaPokeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
