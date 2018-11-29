@@ -84,6 +84,7 @@ public class Pokedex implements Serializable{
         }
         
     }
+    
      /**
      *Imprime todas as informações do array Pokemon
      */

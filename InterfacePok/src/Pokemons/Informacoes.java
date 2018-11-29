@@ -142,7 +142,6 @@ public class Informacoes implements Serializable{
     public void setEvolucao(int evolucao) {
         this.evolucao = evolucao;
     }
-
     /*public Informacoes(String nome, String sexo) {
         this.nome = nome;
         this.sexo = sexo;

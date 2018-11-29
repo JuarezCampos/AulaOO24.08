@@ -9,6 +9,10 @@ package interfacepok;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import pokemons.Agua;
+import pokemons.Fogo;
+import pokemons.Terra;
+import pokemons.Normal;
+import pokemons.Voador;
 import pokemons.Pokedex;
 
 /**
@@ -304,6 +308,7 @@ public class Menu extends javax.swing.JFrame {
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
         // TODO add your handling code here:
         //Informações sobre os Desenvolvedores
+        
     }//GEN-LAST:event_jMenu4ActionPerformed
 
     /**
