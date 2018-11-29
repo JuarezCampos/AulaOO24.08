@@ -178,11 +178,11 @@ public class TelaCadastroGinasio extends javax.swing.JInternalFrame {
                     gin.setNomeGinasio(jTextNomeGin.getText());
                     gin.setMestreGinasio(jTextMestreGin.getText());
                     if("Sim".equals(jBoxCadPoke.toString())){
-                    gin.setPokemons((Menu.Poke().getObjetoPokemon(Integer.parseInt(jTextIdPoke.getText()))));
+                    gin.setPokemons((Menu.getPoke().getObjetoPokemon(Integer.parseInt(jTextIdPoke.getText()))));
                     }
-                    Menu.Poke().setObjetoGinasio(gin);
+                   Menu.getPoke().setObjetoGinasio(gin);
                   
-                    if(Menu.Poke() != null){
+                    if(Menu.getPoke() != null){
                     jTextIdPoke.setText("");
                     jTextMestreGin.setText("");
                     jTextNomeGin.setText("");

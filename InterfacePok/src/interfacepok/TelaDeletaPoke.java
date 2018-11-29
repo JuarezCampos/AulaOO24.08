@@ -104,7 +104,7 @@ public class TelaDeletaPoke extends javax.swing.JInternalFrame {
 
     private void jButDeletaPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButDeletaPokeActionPerformed
         // TODO add your handling code here:
-        Menu.Poke().excluiPokemon(Integer.parseInt(jTextDelePoke.getText()));
+         Menu.getPoke().excluiPokemon(Integer.parseInt(jTextDelePoke.getText()));
         jTextDelePoke.setText("");
     }//GEN-LAST:event_jButDeletaPokeActionPerformed
 

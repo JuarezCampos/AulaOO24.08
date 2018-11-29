@@ -111,7 +111,7 @@ public class TelaConsultaGinasio extends javax.swing.JInternalFrame {
     private void jButConsultaGinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButConsultaGinActionPerformed
         // TODO add your handling code here:
         //tem que passar 
-        jtaTexto.setText(Menu.Poke().getObjetoGinasioLista2());
+       Menu.getPoke().getObjetoGinasioLista();
     }//GEN-LAST:event_jButConsultaGinActionPerformed
 
 

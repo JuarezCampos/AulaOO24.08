@@ -111,7 +111,7 @@ public class TelaConsultaPoke extends javax.swing.JInternalFrame {
 
     private void jButConsulPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButConsulPokeActionPerformed
         // TODO add your handling code here:
-        jTextArea1.setText(Menu.Poke().getObjetoPokemonLista2());
+         Menu.getPoke().getObjetoPokemonLista();
     }//GEN-LAST:event_jButConsulPokeActionPerformed
 
 

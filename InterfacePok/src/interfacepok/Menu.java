@@ -30,6 +30,8 @@ public class Menu extends javax.swing.JFrame {
     TelaCadastroGinasio telaCadGin;
     TelaDeletaPoke telaDelPoke;
     TelaDeletaGinasio telaDelGin;
+    public static Pokedex  poke;
+     
     
     
     public Menu() {
@@ -42,12 +44,15 @@ public class Menu extends javax.swing.JFrame {
         this.telaDelPoke = new TelaDeletaPoke();
         
     }
+        public static Pokedex getPoke() {
+            if (poke == null){
+            poke = new Pokedex();
+            return poke; }
+            else{
+            return poke;
+            }        
+         }
     
-    public static Pokedex Poke(){
-        //instancia 1 pokedex que será acessada por todos as Telas
-       Pokedex poke = new Pokedex();
-       return poke;
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

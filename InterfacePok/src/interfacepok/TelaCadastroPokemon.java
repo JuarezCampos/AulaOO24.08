@@ -40,7 +40,7 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
         //Instancia Pokedex para verificar se o id passado está dentro da faixa
         //existente de pokemons registrados na pokedex.
         Pokedex pokAux = new Pokedex();
-        pokAux = Menu.Poke();
+        pokAux = Menu.poke;
         if(numIdEvolucao > pokAux.getNumPokemon() || numIdEvolucao < 0){
                 System.out.println("Id não válido!");
             }else{
@@ -257,96 +257,98 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButCancelPokeActionPerformed
 
     private void jButSalvarPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButSalvarPokeActionPerformed
-        if(null == jBoxTipoPoke.toString()){
-            JOptionPane.showMessageDialog(jPanel1, "Erro");
-            
-        }
-        else //caso esse objeto for do tipo fogo pega as informações de cada campo e salva esse objeto
-         switch (jBoxTipoPoke.toString()) {
-             case "Fogo":
+            int auxInt = -1;
+            if ("Fogo".equals(jBoxTipoPoke.getSelectedItem())) {
                  Fogo fg = new Fogo();
                  //Setando o pokemon
                  fg.setNome(jTextNomePoke.getText());
                  fg.setSexo(jTextSexoPoke.getText());
                  fg.setHabilidade(jTextHabilPoke.getText());
-                 fg.setFraqueza(jBoxFraqPoke.toString());
-                 fg.setVantagem(jBoxVantaPoke.toString());
+                 fg.setFraqueza(jBoxFraqPoke.toString());//não funcionado
+                 fg.setVantagem(jBoxVantaPoke.toString()); //não funcionado
                  fg.setDescricao(jTextDescPoke.getText());
-                 fg.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));
-                 fg.setPeso(Integer.parseInt(jTextPesoPoke.getText()));
-                 fg.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));
+                 fg.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));//não funcionado
+                 fg.setPeso(Integer.parseInt(jTextPesoPoke.getText()));//não funcionado
+                 fg.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));//não funcionado
+                 auxInt = 0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
-                   Menu.Poke().setObjetoPokemon(fg);
-                 break;
-             case "Agua":
+                    Menu.getPoke().setObjetoPokemon(fg);
+                    Menu.getPoke().getObjetoPokemonLista();
+                }  
+                 else if ("Agua".equals(jBoxTipoPoke.getSelectedItem())){
                  Agua ag = new Agua();
                  //Setando o pokemon
                  ag.setNome(jTextNomePoke.getText());
                  ag.setSexo(jTextSexoPoke.getText());
                  ag.setHabilidade(jTextHabilPoke.getText());
-                 ag.setFraqueza(jBoxFraqPoke.toString());
-                 ag.setVantagem(jBoxVantaPoke.toString());
+                 ag.setFraqueza(jBoxFraqPoke.toString());//não funcionado
+                 ag.setVantagem(jBoxVantaPoke.toString());//não funcionado
                  ag.setDescricao(jTextDescPoke.getText());
-                 ag.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));
-                 ag.setPeso(Integer.parseInt(jTextPesoPoke.getText()));
-                 ag.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));
+                 ag.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));//não funcionado
+                 ag.setPeso(Integer.parseInt(jTextPesoPoke.getText()));//não funcionado
+                 ag.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));//não funcionado
+                 auxInt =0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
-                 Menu.Poke().setObjetoPokemon(ag);
-                 break;
-             case "Normal":
+                  Menu.getPoke().setObjetoPokemon(ag);
+                  Menu.getPoke().getObjetoPokemonLista();
+                }
+                 else if("Normal".equals(jBoxTipoPoke.getSelectedItem())){
                  Normal nm = new Normal();
                  //Setando o pokemon
                  nm.setNome(jTextNomePoke.getText());
                  nm.setSexo(jTextSexoPoke.getText());
                  nm.setHabilidade(jTextHabilPoke.getText());
-                 nm.setFraqueza(jBoxFraqPoke.toString());
-                 nm.setVantagem(jBoxVantaPoke.toString());
+                 nm.setFraqueza(jBoxFraqPoke.toString());//não funcionado
+                 nm.setVantagem(jBoxVantaPoke.toString());//não funcionado
                  nm.setDescricao(jTextDescPoke.getText());
-                 nm.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));
-                 nm.setPeso(Integer.parseInt(jTextPesoPoke.getText()));
-                 nm.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));
+                 nm.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));//não funcionado
+                 nm.setPeso(Integer.parseInt(jTextPesoPoke.getText()));//não funcionado
+                 nm.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));//não funcionado
+                 auxInt =0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
-                 Menu.Poke().setObjetoPokemon(nm);
-                 break;
-             case "Terra":
+                 Menu.getPoke().setObjetoPokemon(nm);
+                 Menu.getPoke().getObjetoPokemonLista();
+                }
+                 else if ("Terra".equals(jBoxTipoPoke.getSelectedItem())){
                  Terra tr = new Terra();
                  //Setando o pokemon
                  tr.setNome(jTextNomePoke.getText());
                  tr.setSexo(jTextSexoPoke.getText());
                  tr.setHabilidade(jTextHabilPoke.getText());
-                 tr.setFraqueza(jBoxFraqPoke.toString());
-                 tr.setVantagem(jBoxVantaPoke.toString());
+                 tr.setFraqueza(jBoxFraqPoke.toString());//não funcionado
+                 tr.setVantagem(jBoxVantaPoke.toString());//não funcionado
                  tr.setDescricao(jTextDescPoke.getText());
-                 tr.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));
-                 tr.setPeso(Integer.parseInt(jTextPesoPoke.getText()));
-                 tr.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));
+                 tr.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));//não funcionado
+                 tr.setPeso(Integer.parseInt(jTextPesoPoke.getText()));//não funcionado
+                 tr.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));//não funcionado
+                 auxInt =0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
-                 Menu.Poke().setObjetoPokemon(tr);
-                 break;
-             case "Voador":
+                   Menu.getPoke().setObjetoPokemon(tr);
+                   Menu.getPoke().getObjetoPokemonLista();
+                 }
+                 else if ("Voador".equals(jBoxTipoPoke.getSelectedItem())){
                  Voador vd = new Voador();
                  //Setando o pokemon
                  vd.setNome(jTextNomePoke.getText());
                  vd.setSexo(jTextSexoPoke.getText());
                  vd.setHabilidade(jTextHabilPoke.getText());
-                 vd.setFraqueza(jBoxFraqPoke.toString());
-                 vd.setVantagem(jBoxVantaPoke.toString());
+                 vd.setFraqueza(jBoxFraqPoke.toString()); //não funcionado
+                 vd.setVantagem(jBoxVantaPoke.toString());//não funcionado
                  vd.setDescricao(jTextDescPoke.getText());
-                 vd.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));
-                 vd.setPeso(Integer.parseInt(jTextPesoPoke.getText()));
-                 vd.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));
+                 vd.setAltura(Integer.parseInt(jTextAlturaPoke.getText())); //não funcionado
+                 vd.setPeso(Integer.parseInt(jTextPesoPoke.getText())); //não funcionado
+                 vd.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText())); //não funcionado
+                 auxInt =0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
-                 Menu.Poke().setObjetoPokemon(vd);
-                 break;
-             default:
-                // JOptionPane.showMessageDialog(jPanel1, "Erro");
-                 break;
-         }
-      Menu.Poke().getObjetoPokemonLista();
-      salvarObjeto(Menu.Poke()); //salva o objeto
+                 Menu.getPoke().setObjetoPokemon(vd);
+                 Menu.getPoke().getObjetoPokemonLista();
+                 }         
+       
+      salvarObjeto(Menu.getPoke()); //salva o objeto
       //Menu.Poke().getObjetoPokemonLista();
       //confere se tem algo na nossa pokedex e então limpa os campos
-      if(Menu.Poke() != null){
+      if( auxInt == 0){
+      JOptionPane.showMessageDialog(null, "Pokemon salvo 20!");            
       jTextAlturaPoke.setText("");
       jTextDescPoke.setText("");
       jTextEvolucao.setText("");
@@ -357,9 +359,19 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
       jBoxFraqPoke.setSelectedIndex(0);
       jBoxTipoPoke.setSelectedIndex(0);
       jBoxVantaPoke.setSelectedIndex(0);
-      }
-      else{
-      JOptionPane.showMessageDialog(jPanel1, "Erro");
+      salvarObjeto(Menu.getPoke()); //salva o objeto
+      }else{
+          JOptionPane.showMessageDialog(null, "Erro em salvar!!");   
+        jTextAlturaPoke.setText("");
+        jTextDescPoke.setText("");
+        jTextEvolucao.setText("");
+        jTextHabilPoke.setText("");
+        jTextNomePoke.setText("");
+        jTextPesoPoke.setText("");
+        jTextSexoPoke.setText("");
+        jBoxFraqPoke.setSelectedIndex(0);
+        jBoxTipoPoke.setSelectedIndex(0);
+        jBoxVantaPoke.setSelectedIndex(0);
       }
       
       
