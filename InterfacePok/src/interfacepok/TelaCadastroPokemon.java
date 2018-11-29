@@ -264,12 +264,12 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
                  fg.setNome(jTextNomePoke.getText());
                  fg.setSexo(jTextSexoPoke.getText());
                  fg.setHabilidade(jTextHabilPoke.getText());
-                 fg.setFraqueza(jBoxFraqPoke.toString());//não funcionado
-                 fg.setVantagem(jBoxVantaPoke.toString()); //não funcionado
+                 fg.setFraqueza((String) jBoxFraqPoke.getSelectedItem());//não funcionado
+                 fg.setVantagem((String) jBoxVantaPoke.getSelectedItem()); //não funcionado
                  fg.setDescricao(jTextDescPoke.getText());
-                 fg.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));//não funcionado
-                 fg.setPeso(Integer.parseInt(jTextPesoPoke.getText()));//não funcionado
-                 fg.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));//não funcionado
+                 fg.setAltura(Integer.parseInt(jTextAlturaPoke.getText().trim()));//não funcionado
+                 fg.setPeso(Integer.parseInt(jTextPesoPoke.getText().trim()));//não funcionado
+                 fg.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText().trim()));//não funcionado
                  auxInt = 0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
                     Menu.getPoke().setObjetoPokemon(fg);
@@ -281,12 +281,12 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
                  ag.setNome(jTextNomePoke.getText());
                  ag.setSexo(jTextSexoPoke.getText());
                  ag.setHabilidade(jTextHabilPoke.getText());
-                 ag.setFraqueza(jBoxFraqPoke.toString());//não funcionado
-                 ag.setVantagem(jBoxVantaPoke.toString());//não funcionado
+                 ag.setFraqueza((String) jBoxFraqPoke.getSelectedItem());//não funcionado
+                 ag.setVantagem((String) jBoxVantaPoke.getSelectedItem());//não funcionado
                  ag.setDescricao(jTextDescPoke.getText());
-                 ag.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));//não funcionado
-                 ag.setPeso(Integer.parseInt(jTextPesoPoke.getText()));//não funcionado
-                 ag.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));//não funcionado
+                 ag.setAltura(Integer.parseInt(jTextAlturaPoke.getText().trim()));//não funcionado
+                 ag.setPeso(Integer.parseInt(jTextPesoPoke.getText().trim()));//não funcionado
+                 ag.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText().trim()));//não funcionado
                  auxInt =0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
                   Menu.getPoke().setObjetoPokemon(ag);
@@ -298,12 +298,12 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
                  nm.setNome(jTextNomePoke.getText());
                  nm.setSexo(jTextSexoPoke.getText());
                  nm.setHabilidade(jTextHabilPoke.getText());
-                 nm.setFraqueza(jBoxFraqPoke.toString());//não funcionado
-                 nm.setVantagem(jBoxVantaPoke.toString());//não funcionado
+                 nm.setFraqueza((String) jBoxFraqPoke.getSelectedItem());//não funcionado
+                 nm.setVantagem((String) jBoxVantaPoke.getSelectedItem());//não funcionado
                  nm.setDescricao(jTextDescPoke.getText());
-                 nm.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));//não funcionado
-                 nm.setPeso(Integer.parseInt(jTextPesoPoke.getText()));//não funcionado
-                 nm.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));//não funcionado
+                 nm.setAltura(Integer.parseInt(jTextAlturaPoke.getText().trim()));//não funcionado
+                 nm.setPeso(Integer.parseInt(jTextPesoPoke.getText().trim()));//não funcionado
+                 nm.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText().trim()));//não funcionado
                  auxInt =0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
                  Menu.getPoke().setObjetoPokemon(nm);
@@ -315,12 +315,12 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
                  tr.setNome(jTextNomePoke.getText());
                  tr.setSexo(jTextSexoPoke.getText());
                  tr.setHabilidade(jTextHabilPoke.getText());
-                 tr.setFraqueza(jBoxFraqPoke.toString());//não funcionado
-                 tr.setVantagem(jBoxVantaPoke.toString());//não funcionado
+                 tr.setFraqueza((String) jBoxFraqPoke.getSelectedItem());//não funcionado
+                 tr.setVantagem((String) jBoxVantaPoke.getSelectedItem());//não funcionado
                  tr.setDescricao(jTextDescPoke.getText());
-                 tr.setAltura(Integer.parseInt(jTextAlturaPoke.getText()));//não funcionado
-                 tr.setPeso(Integer.parseInt(jTextPesoPoke.getText()));//não funcionado
-                 tr.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));//não funcionado
+                 tr.setAltura(Integer.parseInt(jTextAlturaPoke.getText().trim()));//não funcionado
+                 tr.setPeso(Integer.parseInt(jTextPesoPoke.getText().trim()));//não funcionado
+                 tr.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText().trim()));//não funcionado
                  auxInt =0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
                    Menu.getPoke().setObjetoPokemon(tr);
@@ -332,12 +332,12 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
                  vd.setNome(jTextNomePoke.getText());
                  vd.setSexo(jTextSexoPoke.getText());
                  vd.setHabilidade(jTextHabilPoke.getText());
-                 vd.setFraqueza(jBoxFraqPoke.toString()); //não funcionado
-                 vd.setVantagem(jBoxVantaPoke.toString());//não funcionado
+                 vd.setFraqueza((String) jBoxFraqPoke.getSelectedItem()); //não funcionado
+                 vd.setVantagem((String) jBoxVantaPoke.getSelectedItem());//não funcionado
                  vd.setDescricao(jTextDescPoke.getText());
-                 vd.setAltura(Integer.parseInt(jTextAlturaPoke.getText())); //não funcionado
-                 vd.setPeso(Integer.parseInt(jTextPesoPoke.getText())); //não funcionado
-                 vd.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText())); //não funcionado
+                 vd.setAltura(Integer.parseInt(jTextAlturaPoke.getText().trim())); //não funcionado
+                 vd.setPeso(Integer.parseInt(jTextPesoPoke.getText().trim())); //não funcionado
+                 vd.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText().trim())); //não funcionado
                  auxInt =0;
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
                  Menu.getPoke().setObjetoPokemon(vd);
