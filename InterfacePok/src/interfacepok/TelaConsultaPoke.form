@@ -40,21 +40,19 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jButConsulPoke" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="196" max="32767" attributes="0"/>
                           <Component id="jButCancelConsPoke" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jTextConsultaPoke" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="364" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -67,10 +65,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTextConsultaPoke" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" pref="201" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane1" pref="229" max="32767" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButConsulPoke" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -86,8 +81,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Listagem dos Pokemons Cadastrados:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextConsultaPoke">
         </Component>
         <Component class="javax.swing.JButton" name="jButConsulPoke">
           <Properties>

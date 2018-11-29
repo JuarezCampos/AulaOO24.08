@@ -24,10 +24,22 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    TelaConsultaPoke telaConsPoke;
+    TelaConsultaGinasio telaConsGin;
+    TelaCadastroPokemon telaCadPoke;
+    TelaCadastroGinasio telaCadGin;
+    TelaDeletaPoke telaDelPoke;
+    TelaDeletaGinasio telaDelGin;
     
     
     public Menu() {
         initComponents();
+        this.telaCadGin = new TelaCadastroGinasio();
+        this.telaCadPoke = new TelaCadastroPokemon();
+        this.telaConsGin = new TelaConsultaGinasio();
+        this.telaConsPoke = new TelaConsultaPoke();
+        this.telaDelGin = new TelaDeletaGinasio();
+        this.telaDelPoke = new TelaDeletaPoke();
         
     }
     
@@ -207,7 +219,6 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         //Instancia da tela de consulta poke
-       TelaConsultaPoke telaConsPoke = new TelaConsultaPoke();
        jDesktopPane1.add(telaConsPoke);
        telaConsPoke.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -220,7 +231,6 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
         //Instancia da tela de consulta ginasio
-       TelaConsultaGinasio telaConsGin = new TelaConsultaGinasio();
        jDesktopPane1.add(telaConsGin);
        telaConsGin.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -234,7 +244,6 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         //Instancia da tela de cadastro poke
-       TelaCadastroPokemon telaCadPoke = new TelaCadastroPokemon();
        jDesktopPane1.add(telaCadPoke);
        telaCadPoke.setVisible(true);
      /*               String str;
@@ -277,7 +286,6 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
         //Instancia da tela de cadastro ginasio
-       TelaCadastroGinasio telaCadGin = new TelaCadastroGinasio();
        jDesktopPane1.add(telaCadGin);
        telaCadGin.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
@@ -285,7 +293,6 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         //Instancia da tela de deleta poke
-        TelaDeletaPoke telaDelPoke = new TelaDeletaPoke();
         jDesktopPane1.add(telaDelPoke);
         telaDelPoke.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -293,7 +300,6 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
         //Instancia da tela de deleta ginasio
-        TelaDeletaGinasio telaDelGin = new TelaDeletaGinasio();
         jDesktopPane1.add(telaDelGin);
         telaDelGin.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed

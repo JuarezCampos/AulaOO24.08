@@ -5,19 +5,20 @@
  */
 package interfacepok;
 
+import pokemons.Ginasio;
+
 /**
  *
  * @author Juarez
  */
 public class TelaCadastroGinasio extends javax.swing.JInternalFrame {
-
+    Ginasio gin;
     /**
      * Creates new form TelaCadastroGinasio
      */
     public TelaCadastroGinasio() {
         initComponents();
-        jLabelIdPoke.setVisible(false);
-        jTextIdPoke.setVisible(false);
+        this.gin = new Ginasio();
     }
 
     /**
@@ -71,6 +72,11 @@ public class TelaCadastroGinasio extends javax.swing.JInternalFrame {
         jLabel3.setText("Cadastro de pokemon:");
 
         jButSalvaGin.setText("Salvar");
+        jButSalvaGin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButSalvaGinActionPerformed(evt);
+            }
+        });
 
         jButCancelGin.setText("Cancelar");
         jButCancelGin.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +149,8 @@ public class TelaCadastroGinasio extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        getAccessibleContext().setAccessibleParent(this);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,11 +169,27 @@ public class TelaCadastroGinasio extends javax.swing.JInternalFrame {
 
     private void jBoxCadPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBoxCadPokeActionPerformed
         // TODO add your handling code here:
-        if ("Sim".equals(jBoxCadPoke)){
-        jLabelIdPoke.setVisible(true);
-        jTextIdPoke.setVisible(true);
-        }
+        
     }//GEN-LAST:event_jBoxCadPokeActionPerformed
+
+    private void jButSalvaGinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButSalvaGinActionPerformed
+        // TODO add your handling code here:
+                 
+                    gin.setNomeGinasio(jTextNomeGin.getText());
+                    gin.setMestreGinasio(jTextMestreGin.getText());
+                    if("Sim".equals(jBoxCadPoke.toString())){
+                    gin.setPokemons((Menu.Poke().getObjetoPokemon(Integer.parseInt(jTextIdPoke.getText()))));
+                    }
+                    Menu.Poke().setObjetoGinasio(gin);
+                  
+                    if(Menu.Poke() != null){
+                    jTextIdPoke.setText("");
+                    jTextMestreGin.setText("");
+                    jTextNomeGin.setText("");
+                     
+                    }
+                    
+    }//GEN-LAST:event_jButSalvaGinActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

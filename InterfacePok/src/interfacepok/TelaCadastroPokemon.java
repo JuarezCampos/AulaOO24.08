@@ -50,6 +50,9 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
                 //encerra sem pedir para corrigir
             }
     }
+     Pokedex Aux = new Pokedex();
+     
+    
     /**
      * Creates new form TelaCadastro
      */
@@ -243,6 +246,8 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        getAccessibleContext().setAccessibleParent(this);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -271,7 +276,7 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
                  fg.setPeso(Integer.parseInt(jTextPesoPoke.getText()));
                  fg.setNumIdEvolucao(Integer.parseInt(jTextEvolucao.getText()));
                  //pega ele como do tipo fogo e salva na pokedex instanciada no Menu
-                 Menu.Poke().setObjetoPokemon(fg);
+                   Menu.Poke().setObjetoPokemon(fg);
                  break;
              case "Agua":
                  Agua ag = new Agua();
@@ -334,11 +339,11 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
                  Menu.Poke().setObjetoPokemon(vd);
                  break;
              default:
-                 JOptionPane.showMessageDialog(jPanel1, "Erro");
+                // JOptionPane.showMessageDialog(jPanel1, "Erro");
                  break;
          }
       Menu.Poke().getObjetoPokemonLista();
-      salvarObjeto( Menu.Poke()); //salva o objeto
+      salvarObjeto(Menu.Poke()); //salva o objeto
       //Menu.Poke().getObjetoPokemonLista();
       //confere se tem algo na nossa pokedex e então limpa os campos
       if(Menu.Poke() != null){
@@ -352,6 +357,9 @@ public class TelaCadastroPokemon extends javax.swing.JInternalFrame {
       jBoxFraqPoke.setSelectedIndex(0);
       jBoxTipoPoke.setSelectedIndex(0);
       jBoxVantaPoke.setSelectedIndex(0);
+      }
+      else{
+      JOptionPane.showMessageDialog(jPanel1, "Erro");
       }
       
       
