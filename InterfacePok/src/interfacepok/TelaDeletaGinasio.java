@@ -5,6 +5,8 @@
  */
 package interfacepok;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juarez
@@ -105,6 +107,7 @@ public class TelaDeletaGinasio extends javax.swing.JInternalFrame {
     private void jButDeletaGinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButDeletaGinActionPerformed
         // TODO add your handling code here:
          Menu.getPoke().excluiGinasio(Integer.parseInt(jTextDeletaGin.getText()));
+         JOptionPane.showMessageDialog(null, "Ginasio deletado com sucesso!");
         jTextDeletaGin.setText("");
     }//GEN-LAST:event_jButDeletaGinActionPerformed
 

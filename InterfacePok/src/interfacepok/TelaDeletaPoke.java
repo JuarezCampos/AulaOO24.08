@@ -5,6 +5,8 @@
  */
 package interfacepok;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juarez
@@ -104,7 +106,8 @@ public class TelaDeletaPoke extends javax.swing.JInternalFrame {
 
     private void jButDeletaPokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButDeletaPokeActionPerformed
         // TODO add your handling code here:
-         Menu.getPoke().excluiPokemon(Integer.parseInt(jTextDelePoke.getText()));
+        Menu.getPoke().excluiPokemon(Integer.parseInt(jTextDelePoke.getText()));
+        JOptionPane.showMessageDialog(null, "Pokemon deletado com sucesso!");
         jTextDelePoke.setText("");
     }//GEN-LAST:event_jButDeletaPokeActionPerformed
 

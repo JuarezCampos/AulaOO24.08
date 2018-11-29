@@ -6,10 +6,15 @@
 package interfacepok;
 
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import pokemons.Agua;
 import pokemons.Fogo;
+import pokemons.Jogador;
 import pokemons.Terra;
 import pokemons.Normal;
 import pokemons.Voador;
@@ -31,7 +36,89 @@ public class Menu extends javax.swing.JFrame {
     TelaDeletaPoke telaDelPoke;
     TelaDeletaGinasio telaDelGin;
     public static Pokedex  poke;
+    Jogador  jg = TelaCadastroJogador.getJg();
+    
      
+    
+   public void salvarObjeto(Pokedex obj){
+        try{
+            FileOutputStream arquivoGrav = new FileOutputStream("gravObj.dat");
+            ObjectOutputStream objGravar = new ObjectOutputStream(arquivoGrav);
+            objGravar.writeObject(obj);
+            objGravar.flush();
+            objGravar.close();
+            System.out.println("Objeto gravado com sucesso!");
+        }catch(Exception e) {
+            System.out.println("Erro ao salvar arquivo");
+        }
+    }
+    /**
+     * Retorna o objeto pokedex que está salvo no disco
+     * @return 
+     */
+    public Pokedex getObjecto(){
+        
+        try{
+            
+            //Carrega o arquivo
+ 
+            FileInputStream arquivoLeitura = new FileInputStream("gravObj.dat");
+            ObjectInputStream objLeitura = new ObjectInputStream(arquivoLeitura);
+            Pokedex pok = (Pokedex)objLeitura.readObject();
+            System.out.println("Leitura finalizada com sucesso");
+            objLeitura.close();
+            arquivoLeitura.close();
+            return pok;
+            
+        }catch(Exception e) {
+ 
+            System.out.println("Erro ao ler arquivo");
+            return null;
+        }
+    }
+    
+    
+    /**
+     * Salva os objetos jogador instanciados em um arquivo no disco
+     * @param obj 
+     */
+    public void salvarObjetoJg(Jogador obj){
+        try{
+            FileOutputStream arquivoGrav = new FileOutputStream("gravObjJg.dat");
+            ObjectOutputStream objGravar = new ObjectOutputStream(arquivoGrav);
+            objGravar.writeObject(obj);
+            objGravar.flush();
+            objGravar.close();
+            System.out.println("Objeto gravado com sucesso!");
+        }catch(Exception e) {
+            System.out.println("Erro ao salvar arquivo");
+        }
+    }
+    /**
+     * Retorna o objeto jogador que está salvo no disco
+     * @return 
+     */
+    public Jogador getObjectoJg(){
+        
+        try{
+            
+            //Carrega o arquivo
+ 
+            FileInputStream arquivoLeitura = new FileInputStream("gravObjJg.dat");
+            ObjectInputStream objLeitura = new ObjectInputStream(arquivoLeitura);
+            Jogador jg = (Jogador)objLeitura.readObject();
+            System.out.println("Leitura finalizada com sucesso");
+            objLeitura.close();
+            arquivoLeitura.close();
+            return jg;
+            
+        }catch(Exception e) {
+ 
+            System.out.println("Erro ao ler arquivo");
+            return null;
+        }
+    }
+    
     
     
     public Menu() {
@@ -43,6 +130,7 @@ public class Menu extends javax.swing.JFrame {
         this.telaDelGin = new TelaDeletaGinasio();
         this.telaDelPoke = new TelaDeletaPoke();
         
+        
     }
         public static Pokedex getPoke() {
             if (poke == null){
@@ -52,6 +140,8 @@ public class Menu extends javax.swing.JFrame {
             return poke;
             }        
          }
+        
+        
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -109,6 +199,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/disk.png"))); // NOI18N
         jMenuItem2.setText("Salvar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -312,15 +407,37 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         /// DESENVOLVER ROTINA DE ABRIR E FECHAR ARQUIVOS
-        
-        
+       if(getObjecto() != null){      
+       poke = getObjecto();
+        JOptionPane.showMessageDialog(null, "Arquivos carregados");
+       }
+       else {
+       JOptionPane.showMessageDialog(null, "Erro em carregar os Arquivos");
+       }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
         // TODO add your handling code here:
         //Informações sobre os Desenvolvedores
+        JOptionPane.showMessageDialog(jDesktopPane1, "|Nome: "+jg.getNomeJogador()+"\n"
+                                          + "|Sexo: "+jg.getSexoJogador()+"\n"
+                                          + "|Idade: "+jg.getIdade()+"\n"
+                                          + "|N° de pokebolas: "+jg.getNumPokebolas()
+                                          + "|Insignias: " + jg.getInsigniaJogador(0));
         
     }//GEN-LAST:event_jMenu4ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        if(jg!= null && poke != null){
+        salvarObjeto(getPoke());
+        salvarObjetoJg(jg);
+        JOptionPane.showMessageDialog(null, "Poke e Jogador Salvos");
+        }
+        else{
+        JOptionPane.showMessageDialog(null, "Erro em Salvar");
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
