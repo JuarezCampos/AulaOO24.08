@@ -82,7 +82,36 @@ public class Pokedex implements Serializable{
             }
         
         }
+    }
+    /**
+     *
+     * @return Lista em String
+     */
+    public  String getObjetoPokemonLista2(){
+        String pokemon;
+        if(this.arrayPokemon.isEmpty()){
+            System.out.println("Não há nenhum pokemon registrado na pokedex!");
+        }else{
+            
+            for(int aux = 0 ; aux< this.arrayPokemon.size(); aux++){
+             return   pokemon = "| Tipo: "+((InfoPok)this.arrayPokemon.get(aux)).getTipo()+
+                        "\n| Nome do pokemon: " +this.arrayPokemon.get(aux).getNome()+ 
+                        "\n| Sexo: "+this.arrayPokemon.get(aux).getSexo()+
+                        "\n| Habilidade: "+this.arrayPokemon.get(aux).getHabilidade()+"\n| Fraqueza: "+
+                        ((InfoPok)this.arrayPokemon.get(aux)).getFraqueza()+"\n| Vantagem: "
+                        +((InfoPok)this.arrayPokemon.get(aux)).getVantagem()+"\n| Descrição: "
+                        +this.arrayPokemon.get(aux).getDescricao()+"\n| Altura: "
+                        +this.arrayPokemon.get(aux).getAltura()+"\n| Peso: "+
+                        this.arrayPokemon.get(aux).getPeso()+"\n| Seu id: "+
+                        aux+"\n| Id do seu pokemon de origem: "+
+                        this.arrayPokemon.get(aux).getNumIdEvolucao();
+              //  System.out.println(pokemon+"\n ---------- ");
+
+
+            }
         
+        }
+        return "";
     }
     
      /**
@@ -114,6 +143,25 @@ public class Pokedex implements Serializable{
      * @param ind indece do objeto no array Ginasio
      * @return o objeto referente ao ind passado por parametro
      */
+    
+    
+     public String getObjetoGinasioLista2(){
+        String ginasio;
+        if(this.arrayGinasio.isEmpty()){
+            System.out.println("Não há nenhum ginasio registrado na pokedex!");
+        }else{
+            
+            for(int aux = 0 ; aux< this.arrayGinasio.size(); aux++){
+               
+                return ginasio = " | Nome do Ginasio: "+this.arrayGinasio.get(aux).getNomeGinasio()+"\n | "
+                        + "Nome do mestre de ginasio: "+this.arrayGinasio.get(aux).getMestreGinasio();
+               // System.out.println(ginasio);                        
+        }
+       
+    }
+        return "";
+   }
+     
     public Ginasio getObjetoGinasio(int ind){
      return this.arrayGinasio.get(ind);
     } 
