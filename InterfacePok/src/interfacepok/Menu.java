@@ -36,7 +36,7 @@ public class Menu extends javax.swing.JFrame {
     TelaDeletaPoke telaDelPoke;
     TelaDeletaGinasio telaDelGin;
     public static Pokedex  poke;
-    Jogador  jg = TelaCadastroJogador.getJg();
+   
     
      
     
@@ -166,6 +166,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -173,6 +174,8 @@ public class Menu extends javax.swing.JFrame {
 
         jDesktopPane1.setBackground(new java.awt.Color(153, 255, 153));
         jDesktopPane1.setForeground(new java.awt.Color(204, 255, 204));
+        jDesktopPane1.setDesktopManager(null);
+        jDesktopPane1.setMaximumSize(new java.awt.Dimension(1400, 1100));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -284,6 +287,16 @@ public class Menu extends javax.swing.JFrame {
                 jMenu4ActionPerformed(evt);
             }
         });
+
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons2/information.png"))); // NOI18N
+        jMenuItem9.setText("Informações");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem9);
+
         jMenuBar1.add(jMenu4);
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/door_out.png"))); // NOI18N
@@ -306,11 +319,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -346,37 +359,6 @@ public class Menu extends javax.swing.JFrame {
         //Instancia da tela de cadastro poke
        jDesktopPane1.add(telaCadPoke);
        telaCadPoke.setVisible(true);
-     /*               String str;
-                    int val;
-                    
-                            Agua ag = new Agua();
-                            //setando o tipo
-                            ag.setTipo();
-                            str = telaCadPoke.jTextNomePoke.getText();
-                            ag.setNome(str);
-                            str = telaCadPoke.jTextSexoPoke.getText();
-                            ag.setSexo(str);
-                            str = telaCadPoke.jTextHabilPoke.getText();
-                            ag.setHabilidade(str);
-                            str = telaCadPoke.jBoxFraqPoke.toString();
-                            ag.setFraqueza(str);
-                            str = telaCadPoke.jBoxVantaPoke.toString();
-                            ag.setVantagem(str);
-                            str = telaCadPoke.jTextDescPoke.toString();
-                            ag.setDescricao(str);
-                            val = Integer.parseInt(telaCadPoke.jTextAlturaPoke.getText());
-                            ag.setAltura(val);
-                            val = Integer.parseInt(telaCadPoke.jTextPesoPoke.getText());
-                            ag.setPeso(val);
-                            val = Integer.parseInt(telaCadPoke.jTextEvolucao.getText());
-                            ag.setEvolucao(val);
-                            pokedex.setObjetoPokemon(ag);
-                            
-                            if(pokedex.getNumPokemon() == 1){
-                                JOptionPane.showMessageDialog(null,"Deu");
-                            }
-    */                        
-      
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
@@ -418,26 +400,33 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
         // TODO add your handling code here:
-        //Informações sobre os Desenvolvedores
-        JOptionPane.showMessageDialog(jDesktopPane1, "|Nome: "+jg.getNomeJogador()+"\n"
-                                          + "|Sexo: "+jg.getSexoJogador()+"\n"
-                                          + "|Idade: "+jg.getIdade()+"\n"
-                                          + "|N° de pokebolas: "+jg.getNumPokebolas()
-                                          + "|Insignias: " + jg.getInsigniaJogador(0));
+        //Informações sobre o Jogador
+        /*
         
+        */
     }//GEN-LAST:event_jMenu4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        if(jg!= null && poke != null){
+        if(TelaCadastroJogador.getJg()!= null && poke != null){
         salvarObjeto(getPoke());
-        salvarObjetoJg(jg);
+        salvarObjetoJg(TelaCadastroJogador.getJg());
         JOptionPane.showMessageDialog(null, "Poke e Jogador Salvos");
         }
         else{
         JOptionPane.showMessageDialog(null, "Erro em Salvar");
         }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Nome: "+TelaCadastroJogador.getJg().getNomeJogador()+"\n"
+                                          + "Sexo: "+TelaCadastroJogador.getJg().getSexoJogador()+"\n"
+                                          + "Idade: "+TelaCadastroJogador.getJg().getIdade()+"\n"
+                                          + "N° de pokebolas: "+TelaCadastroJogador.getJg().getNumPokebolas()+"\n"
+                                          + "Insignias: " + TelaCadastroJogador.getJg().getInsigniaJogador(0));
+        
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -490,6 +479,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 
   

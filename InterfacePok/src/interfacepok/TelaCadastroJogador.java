@@ -270,8 +270,8 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        getObjectoJg();
-        JOptionPane.showMessageDialog(null, "Jogador Carregado");
+        jg = getObjectoJg();
+        JOptionPane.showMessageDialog(null, "Jogador: "+ getJg().getNomeJogador() + " Carregado");
         getJg().imprimeJogador();
         menu.setVisible(true);
         dispose();

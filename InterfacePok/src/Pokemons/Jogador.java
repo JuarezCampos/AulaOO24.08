@@ -5,6 +5,10 @@
  */
 package pokemons;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -26,6 +30,43 @@ private int ind = 0;
 public Jogador(){
     
 }
+
+public void salvarObjetoJg(Jogador obj){
+        try{
+            FileOutputStream arquivoGrav = new FileOutputStream("gravObjJg.dat");
+            ObjectOutputStream objGravar = new ObjectOutputStream(arquivoGrav);
+            objGravar.writeObject(obj);
+            objGravar.flush();
+            objGravar.close();
+            System.out.println("Objeto gravado com sucesso!");
+        }catch(Exception e) {
+            System.out.println("Erro ao salvar arquivo");
+        }
+    }
+    /**
+     * Retorna o objeto jogador que está salvo no disco
+     * @return 
+     */
+    public Jogador getObjectoJg(){
+        
+        try{
+            
+            //Carrega o arquivo
+ 
+            FileInputStream arquivoLeitura = new FileInputStream("gravObjJg.dat");
+            ObjectInputStream objLeitura = new ObjectInputStream(arquivoLeitura);
+            Jogador jg = (Jogador)objLeitura.readObject();
+            System.out.println("Leitura finalizada com sucesso");
+            objLeitura.close();
+            arquivoLeitura.close();
+            return jg;
+            
+        }catch(Exception e) {
+ 
+            System.out.println("Erro ao ler arquivo");
+            return null;
+        }
+    }
 /**
  * Imprime os dados do jogador
  */
